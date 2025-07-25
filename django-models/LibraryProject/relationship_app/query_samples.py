@@ -23,6 +23,7 @@ except Author.DoesNotExist:
 # List all books in the library
 print("\nAll books in the library:")
 books = Book.objects
+books = books.all()
 for book in books:
     print(f"- {book.title}")
 
