@@ -31,7 +31,8 @@ for book in books:
 library_name = "Central library"
 try:
     library = Library.objects.get(name=library_name)
-    librarian = library.librarian
+    #librarian = library.librarian
+    librarian = Librarian.objects.get(library=library)
     print(f"\nLibrarian for '{library.name}.: {librarian.name}")
 except library.DoesNotExist:
     print(f"\nNo library found with the name '{library.name}'.")
