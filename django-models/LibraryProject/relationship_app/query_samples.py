@@ -11,7 +11,7 @@ author_name = "Amiegbe Osayande Michael"
 try:
     author = Author.objects.get(name=author_name)
 
-    books = Book.all()
+    books = Book.objects.filter(author=author)
     print(f"Books by {author.name}:")
     
     for book in books:
