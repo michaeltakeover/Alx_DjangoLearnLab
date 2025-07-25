@@ -30,7 +30,7 @@ for book in books:
 # Retrieve the librarian for a library
 library_name = "Central library"
 try:
-    library = Library.objects.get(name=library_name)
+    library = Library.objects.get()
     librarian = library.librarian
     print(f"\nLibrarian for '{library.name}.: {librarian.name}")
 except library.DoesNotExist:
