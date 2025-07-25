@@ -11,7 +11,7 @@ author_name = "Amiegbe Osayande Michael"
 try:
     author = Author.objects.get(name=author_name)
 
-    books = Book.objects.filter(author=author)
+    books = Book.all()
     print(f"Books by {author.name}:")
     
     for book in books:
@@ -22,8 +22,8 @@ except Author.DoesNotExist:
 
 # List all books in the library
 print("\nAll books in the library:")
-all_books = Book.objects.all()
-for book in all_books:
+books = Book.objects
+for book in books:
     print(f"- {book.title}")
 
 # Retrieve the librarian for a library
