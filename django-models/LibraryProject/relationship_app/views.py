@@ -12,6 +12,6 @@ def book_list(request):
 
 class BookListView(ListView):
     model = Book
-    tempelate_name = 'list_books.html'
+    template_name = 'list_books.html'
     context_object_name = 'book'
 
