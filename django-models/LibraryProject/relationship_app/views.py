@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Book
-from django.views.generic import ListView
+from .models import Book, Library
+from .models import Library
+from django.views.generic import ListView, DetailView
 # Create your views here.
 
 
@@ -14,3 +15,5 @@ class BookListView(ListView):
     model = Book
     template_name = 'list_books.html'
     context_object_name = 'book'
+
+#class LibraryDetailView(DetailView):
