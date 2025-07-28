@@ -5,14 +5,14 @@ from django.views.generic import ListView, DetailView
 
 
 def book_list(request):
-    books = Book.objects.all()
+    books = Book.objects.all().select_related('author')
     context = {'book_list': books}
     return render(request, 'relationship_app/list_books.html', context)
 
 
 class BookListView(ListView):
-    model = Book
+    model = Library
     template_name = 'list_books.html'
-    context_object_name = 'book'
+    context_object_name = 'library'
 
 #class LibraryDetailView(DetailView):
